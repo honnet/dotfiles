@@ -1,0 +1,310 @@
+#!/bin/sh
+
+test -r /etc/profile && source /etc/profile
+
+# OPTIONS
+
+setopt sh_word_split # Do not quote expanded vars
+#setopt transient_rprompt # Delete previous Rprompt when prompting
+setopt hist_ignore_all_dups     # Ignore duplicate entries in history
+setopt hist_find_no_dups        #
+
+# CONFIG
+
+umask 077
+
+# COLORS
+
+red="%{[33;01;31m%}"
+green="%{[33;01;32m%}"
+blue="%{[33;01;36m%}"
+yellow="%{[33;01;33m%}"
+purple="%{[33;01;34m%}"
+lred="%{[33;00;31m%}"
+lgreen="%{[33;00;32m%}"
+lblue="%{[33;00;36m%}"
+lyellow="%{[33;00;33m%}"
+lpurple="%{[33;00;34m%}"
+tst="%{[33;00;35m%}"
+white="%{[0m%}"
+
+# PROMPT
+
+NBCMD=0
+
+function precmd
+{
+    ret=$?
+    if [ $ret -ne 0 ]; then
+        res="$red$ret$white";
+    else
+        res="";
+    fi
+
+    local my_PWD=$PWD
+    local my_free_width=40
+    local my_COLUMNS=$(($COLUMNS - $my_free_width))
+    local my_length=$((${#USER} + ${#HOST} + 7))
+    if [ $((${#PWD} + $my_length)) -gt $my_COLUMNS ]; then
+        local left=$(echo $PWD | sed "s#^\(/[^/]*/[^/]*/\).*#\1#g")
+        local right=$(echo $PWD | sed "s#^/[^/]*/[^/]*\(/.*\)#\1#g")
+        my_PWD="$left...$right"
+        while [ $((${#my_PWD} + $my_length)) -gt $my_COLUMNS ]; do
+            local right_new=$(echo $right | sed "s#^/[^/]*\(/.*\)#\1#g")
+            if [ "$right_new" = "$right" ]; then
+                break
+            fi
+            right="$right_new"
+            my_PWD="$left...$right"
+        done
+    fi
+    my_PWD=$(echo "$my_PWD" | sed "s#$HOME#~#g")
+
+    NBCMD=$(( $NBCMD + 1 ))
+
+    if [ ${+NICE_PROMPT} -eq 1 ]; then
+
+# builtin in zsh 4.3
+#        echo -n "[33;00;31m"                      # Don't override last
+#        echo -n '%'                                 # unfeed line. Insert
+#        echo -n ${(l:$(( $COLUMNS - 2 )):::):-}     # red '%' instead
+
+        if [ x$USER = xroot ]; then
+            color=$red
+        else
+            color=$green
+        fi
+
+        PS1="$color%n$blue@$yellow%m $purple$my_PWD/$white";
+        RPS1="$res [%T]"
+
+    else
+
+        PS1="$ ";
+        unset RPS1
+
+    fi
+
+}
+
+function prompt # Switch between heavy colored and minimal prompt
+{
+
+    if [ $# -eq 1 ]; then
+        NICE_PROMPT="$1"
+        return 0
+    fi
+
+    if [ ${+NICE_PROMPT} -eq 1 ]; then
+        unset NICE_PROMPT
+    else
+        NICE_PROMPT=""
+    fi
+}
+
+prompt 1 # By default, have a nice prompt
+
+# CUSTOMIZE TIME BUILTIN
+
+TIMEFMT="time: %*E real  %*U user  %*S system (%P)"
+
+forward-kill-word()
+{
+    BUFFER=$(echo "$BUFFER" | sed -re "s/(.{$CURSOR})\W*\w*/\1/")
+}
+
+# CUSTOM WIDGETS
+
+my-accept-line ()
+{
+    targets="amule emacs e firefox inkscape gimp qgit4"
+
+    if test -n "$DISPLAY"; then
+        if ! echo "$BUFFER" | grep -q "&!?$"; then
+            for t in $targets; do
+                if echo $BUFFER | grep -q "^$t\b"; then
+                    BUFFER="$BUFFER&!"
+                    break
+                fi
+            done
+        fi
+    fi
+    zle accept-line
+}
+
+show-man ()
+{
+  man ${BUFFER%% *} 2> /dev/null;
+}
+
+forward-kill-word()
+{
+    BUFFER=$(echo "$BUFFER" | sed -re "s/(.{$CURSOR})\W*\w*/\1/")
+}
+
+backward-kill-word()
+{
+    BUFFER=$(echo "$BUFFER" | sed -re "s/(.{$CURSOR})\W*\w*/\1/")
+}
+
+forward-word()
+{
+    CURSOR=$(( $(echo "$BUFFER" | sed -re "s/((.{$CURSOR})\W*\w*).*/\\1/" | wc -c) - 1))
+}
+
+backward-word()
+{
+    BUF=$(echo "$BUFFER" | sed -re "s/(.{$CURSOR}).*/\\1/")
+    CURSOR=$(( $(echo "$BUF" | sed -re "/\W\w/{s/(.*\W)\w.*/\\1/;p};d" | wc -c) - 1))
+}
+
+zle -N my-accept-line
+zle -N show-man # opens the man of the current command
+zle -N forward-kill-word
+zle -N backward-kill-word
+zle -N forward-word
+zle -N backward-word
+
+bindkey "" my-accept-line
+
+# BINDINGS
+
+bindkey '[H' beginning-of-line
+bindkey '[F' end-of-line
+bindkey '[3~' delete-char             # Del
+bindkey '[2~' overwrite-mode          # Insert
+bindkey '[5~' history-search-backward # PgUp
+bindkey '[6~' history-search-forward  # PgDn
+bindkey '[1;5C' forward-word
+bindkey '[1;5D' backward-word
+bindkey '[3;5~' forward-kill-word
+bindkey '[9;3~' backward-kill-word
+
+# ALIASES
+
+LSOPTS="--tabsize=0 --literal --color=auto --show-control-chars --human-readable"
+
+alias e='emacs'
+alias k='konqueror'
+alias reload="source ~/.zshrc"
+
+# BSD survival kit
+
+which gls >& /dev/null && alias ls="gls $LSOPTS"
+which gmake >& /dev/null  && alias make=gmake
+which gsed >& /dev/null && alias sed=gsed
+
+export CCACHE_DIR=~/.ccache
+
+# FUNCTIONS
+
+error ()
+{
+    echo $* 1>&2
+}
+
+check_args ()
+{
+    [ $2 -eq $3 ] || (error "$1 requires $3 arguments"; return 1)
+}
+
+testing ()
+{
+    check_args "$0" "$#" 1 || return 1
+    if ! [ -e /usr/portage/$1 ]; then
+        error "Package $1 does not exist"
+        return 1
+    fi
+    if grep "^$1$" /etc/portage/package.keywords > /dev/null 2> /dev/null; then
+        error "Package $1 already in testing mode"
+        return 1
+    fi
+    echo "$1" >> /etc/portage/package.keywords
+}
+
+match ()
+{
+    echo "$2" | grep "$1" > /dev/null 2> /dev/null
+    return $?
+}
+
+tunnel ()
+{
+    case $# in
+        2)
+            ssh "$2" -L "${1}:localhost:${1}"
+            ;;
+        3)
+            ssh "$2" -L "${1}:localhost:${1}" "$3"
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
+mysudo ()
+{
+    su -c "$*"
+}
+
+mkcd ()
+{
+    [ $# -eq 1 ] || return 1
+    mkdir -p "$1"
+    cd "$1"
+}
+
+rename ()
+{
+    local cwd="$(pwd)"
+    local pretend=false
+
+    while true; do
+        case "$1" in
+            "-p")
+                pretend=true
+                ;;
+            *)
+                break
+                ;;
+        esac
+        shift
+    done
+
+    if test "$#" -lt 2; then
+        echo "usage: $0 [-p] from to files"
+        return 1
+    fi
+
+    local from="$1"
+    shift
+    local to="$1"
+    shift
+
+    test $# -eq 0 && set *
+
+    for file in "$@"; do
+        cd "$cwd"
+        local dir="$(dirname "$file")"
+        if test "$dir" = "."; then
+            dir=""
+        else
+            dir="$dir/"
+        fi
+        if test -n "$dir"; then
+            file="$(basename "$file")"
+            cd "$dir"
+        fi
+        if echo "$file" | grep -q "$from"; then
+            local new="$(echo "$file" | sed -r "s/$from/$to/g")"
+            if $pretend; then
+                echo "$dir$file"
+                echo "  -> $dir$new"
+            else
+                mv "$file" "$new"
+            fi
+        fi
+    done
+    cd "$cwd"
+}

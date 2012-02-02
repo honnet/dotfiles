@@ -1,0 +1,5 @@
+.*.swp
+.ssh/known_hosts*
+.ssh/script.exp
+.vim/.netrwhist
+.ssh/id_rsa
