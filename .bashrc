@@ -77,20 +77,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias l='ls -l'
-alias ll='l -AF'
-alias v='vi -O'
-alias g='gvim -O'
-alias tree="tree -C"
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+ALIAS_FILE=~/.zsh/rc/alias.rc
+if [ -f $ALIAS_FILE ]; then
+    . $ALIAS_FILE
 fi
 
 # enable programmable completion features (you don't need to enable

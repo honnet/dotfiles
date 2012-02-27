@@ -3,8 +3,9 @@
 # alias de drix
 alias grep='grep --color'
 alias rgrep='rgrep --color -n -I --exclude=\*tags\*'
-alias ll='ls -lAF'
+alias ls='ls --color'
 alias l='ls -l'
+alias ll='l -AF'
 alias ssh='ssh -X'
 alias v='vi -O'
 alias m='meld'
@@ -23,17 +24,10 @@ alias e="emacs"
 alias vim="vim -O"
 
 # Common aliases
-alias j="jobs"
 alias pu="pushd"
 alias po="popd"
 alias d="dirs -v"
 alias pss="ps aux | head -n 1 && ps lax | grep -v grep  | grep -i"
-alias la="ls -lah"
-alias lla="ls -llah"
-alias more="less"
-alias sl="ls"
-alias lesss="less -R"
-alias less="less -m"
 alias df="df --human-readable"
 alias du="du --human-readable"
 alias duh="du --all --max-depth=1 | sort -n"
@@ -68,27 +62,7 @@ alias keys="mplayer -af pan=1:0:1"
 alias rec="ffmpeg -f alsa -ac 1 -i hw:1,0 -acodec libmp3lame -ab 96k"
 alias webcam="gst-launch-0.10 autovideosrc ! video/x-raw-yuv,framerate=\(fraction\)30/1,width=640,height=480 ! ffmpegcolorspace ! autovideosink"
 alias wcrec="ffmpeg -f alsa -i hw:1,0 -f video4linux2 -s 800x600 -i /dev/video0 -r 30 -f avi -vcodec mpeg4 -vtag xvid -sameq -acodec libmp3lame -ab 96k"
-alias eclipse="/Dev/eclipse/3.5.2/eclipse"
-alias android="/Dev/android/tools/android"
-alias spotify="wine \"C:\Program Files\Spotify\spotify.exe\" 2> /dev/null"
-alias alied="vim $HOME/.zsh/rc/alias.rc && resource"
 
-# Aliases for FTP connections
-alias myftp="ncftp -u u45366386 compton.fr"
-alias compton="ncftp -u u45366386 -p \`password give ftp-root\` compton.fr"
-alias pub="ncftpput -u u45366386 -p \`password give ftp-root\` compton.fr compton/pub/files"
-
-alias pw="pwgen -cnsN1"
+# Others
 alias distro="lsb_release -a"
-alias ls="ls -F --color"
-alias factor="rlwrap /Dev/factor/factor -run=listener"
-alias xfactor="/Dev/factor/factor"
-alias isomount="sudo mount -o loop -t iso9660"
-alias freetalk="freetalk --jid clement.moussu@gmail.com"
-alias dl="ls -1tlhr $HOME/Downloads | tail -n 6"
 
-case $(uname) in
-    (FreeBSD)
-    alias ls='ls -GF'
-    ;;
-esac
