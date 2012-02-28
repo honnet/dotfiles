@@ -202,10 +202,9 @@ fi
 
 
 export PATH=$PATH:/home/drix/bin
-export PATH=$PATH:/home/drix/geek/arm/bin
-export PATH=$PATH:/home/drix/geek/arduino
-export PATH=$PATH:/home/drix/geek/eclipse_workspace/android-sdk-linux_x86/platform-tools
-export PATH=$PATH:/home/drix/geek/eclipse_workspace/android-sdk-linux_x86/tools
-export PATH=$PATH:/home/drix/geek/processing-1.2.1
-export PATH=$PATH:/opt/msp430-gcc-4.4.5/bin
-export PATH=$PATH:/opt/altera9.0/modelsim_ase/linux/
+export PATH=$PATH:/opt/android-sdk/platform-tools
+export PATH=$PATH:/opt/android-sdk/tools
+export PATH=$PATH:/opt/processing
+export PATH=$PATH:/opt/arm/bin
+export PATH=$PATH:/opt/msp430-gcc/bin
+export PATH=$PATH:/opt/modelsim/linux/
