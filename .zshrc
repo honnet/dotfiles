@@ -94,6 +94,7 @@ setopt   autoresume histignoredups pushdsilent
 setopt   autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
 setopt   NO_hup
+setopt interactivecomments      # allow in line comments
 
 # Key bindings
 bindkey -e                      # emacs key bindings
