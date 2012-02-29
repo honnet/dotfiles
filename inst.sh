@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOTFILES=".bashrc .gitconfig .gvimrc .vim .vimrc .zsh .zshrc"
+DOTFILES=".bashrc .gitconfig .gvimrc .vim .vimrc .zsh .zshrc .gitmyignore"
 
 cd
 

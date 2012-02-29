@@ -1,11 +1,6 @@
 # temporary files #
 ###################
 .*.swp
-
-
-# Compiled source #
-###################
-*.class
-*.o
-*.so
+.*.swo
+.*.swn
 
