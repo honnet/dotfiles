@@ -1,5 +1,8 @@
-"Set syntax on
+" Set syntax on
 syn on
+
+" Set command history length
+set history=10000
 
 " Highly recommended to set tab keys to 4 spaces
 set expandtab
@@ -14,7 +17,7 @@ set pastetoggle=<F2>
 " display line numbers
 :set number
 
-" To turn off expandtab in makefiles
+" turn off expandtab in makefiles
  autocmd FileType make setlocal noexpandtab
 
 " Higlhight search
@@ -23,33 +26,23 @@ set hls
 " Wrap text instead of being on one line
 set lbr
 
+" Automatically wrap left and right
 set whichwrap=<,>,[,]
 
-" Change colorscheme to molokai :(check ~/.vim/colors/molokai.vim)
-"set t_Co=256
-"colorscheme molokai
-
-"turn beep off
+" Turn beep off
 set noerrorbells
 set visualbell
 
-"To disable auto-comment for all files:
+" Disable auto-comment for all files:
 au FileType * setl fo=cql
 
-"activate mouse:
+" Activate mouse:
 set mouse=a
 
-"activate variable/function declaration research
-set tags=./tags,~/TPfreeRTOS/tags,~/TPfreeRTOS/Source/tags,~/TPfreeRTOS/STM32/tags,
+" Activate variable/function declaration research
+set tags=./tags
 
-"change the shape of the cursor
-if has("autocmd")
-  au InsertEnter * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-  au InsertLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block"
-  au VimLeave * silent execute "!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam"
-endif
-
-
+" Do world statistics on file
 function! WordFrequency() range
   let all = split(join(getline(a:firstline, a:lastline)), '\A\+')
   let frequencies = {}
@@ -65,8 +58,49 @@ function! WordFrequency() range
 endfunction
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 
-"display pde files (processing) like java files:
+" Display pde files (processing) like java files:
 au! BufRead,BufNewFile *.pde set filetype=java
 
-"display ino files (arduino) like c files:
+" Display ino files (arduino) like c files:
 au! BufRead,BufNewFile *.ino set filetype=c
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spell check http://vimcasts.org/episodes/spell-checking/
+
+"toggle spell checking on and off
+nmap zs :set spell!<CR>
+
+"next & prev error:
+map zn ]s
+map zp [s
+
+"cursor on misspelled word => show suggestions
+map ZZ z=
+
+"cursor on misspelled word => correct with 1st suggestion
+map zz 1z=
+
+" Set region to french and us english
+"set spelllang=fr,en_us
+
+" automatic spell check for latex files
+augroup filetypedetect
+  au BufNewFile,BufRead *.tex setlocal spell spelllang=fr,en_us
+augroup END
+
+" suggestions number (obtained with 'z=')
+set spellsuggest=6
+
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1 term=underline,bold cterm=underline,bold
+highlight clear SpellCap
+highlight SpellCap term=underline,bold cterm=underline,bold
+highlight clear SpellRare
+highlight SpellRare term=underline,bold cterm=underline,bold
+highlight clear SpellLocal
+highlight SpellLocal term=underline,bold cterm=underline,bold
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Automatically remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
+
