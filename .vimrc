@@ -65,7 +65,8 @@ function! WordFrequency() range
 endfunction
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 
-"display tie files like verilog files:
-au! BufRead,BufNewFile *.pde set filetype=c
+"display pde files (processing) like java files:
+au! BufRead,BufNewFile *.pde set filetype=java
 
-
+"display ino files (arduino) like c files:
+au! BufRead,BufNewFile *.ino set filetype=c
