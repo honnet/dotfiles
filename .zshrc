@@ -205,7 +205,6 @@ fi
 export PATH=$PATH:/home/drix/bin
 export PATH=$PATH:/opt/android-sdk/platform-tools
 export PATH=$PATH:/opt/android-sdk/tools
-export PATH=$PATH:/opt/processing
 export PATH=$PATH:/opt/arm/bin
 export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
