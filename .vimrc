@@ -18,7 +18,7 @@ set pastetoggle=<F2>
 :set number
 
 " turn off expandtab in makefiles
- autocmd FileType make setlocal noexpandtab
+autocmd FileType make setlocal noexpandtab
 
 " Higlhight search
 set hls
@@ -31,7 +31,7 @@ set whichwrap=<,>,[,]
 
 " Turn beep off
 set noerrorbells
-set visualbell
+"set visualbell
 
 " Disable auto-comment for all files:
 au FileType * setl fo=cql

@@ -1,5 +1,14 @@
 " Open in full screen
-autocmd GUIEnter * winpos 0 0 | set lines=999 columns=999
+function FullScreen()
+  silent !wmctrl -r :ACTIVE: -b toggle,fullscreen
+endfunction
+
+" execute when start
+autocmd GUIEnter * call FullScreen()
+
+
+" disable visual warnings (too slow)
+set novisualbell
 
 " Change colorscheme from default to delek
 colorscheme molokai
