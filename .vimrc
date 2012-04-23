@@ -80,12 +80,9 @@ map ZZ z=
 "cursor on misspelled word => correct with 1st suggestion
 map zz 1z=
 
-" Set region to french and us english
-"set spelllang=fr,en_us
-
 " automatic spell check for latex files
 augroup filetypedetect
-  au BufNewFile,BufRead *.tex setlocal spell spelllang=fr,en_us
+  au BufNewFile,BufRead *.tex setlocal spell spelllang=en_us ",fr
 augroup END
 
 " suggestions number (obtained with 'z=')
