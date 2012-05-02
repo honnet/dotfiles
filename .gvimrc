@@ -19,3 +19,7 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 "set guioptions-=r  "remove right-hand scroll bar
 
+" Allow copy/paste to/from clipboard with "cc/vv"
+noremap cc "+y
+noremap vv "+p
+

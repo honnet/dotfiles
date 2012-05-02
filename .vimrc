@@ -98,6 +98,6 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline,bold cterm=underline,bold
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Automatically remove trailing whitespaces
+" Automatically remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
