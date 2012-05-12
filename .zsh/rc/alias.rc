@@ -13,6 +13,7 @@ alias g='gvim -O'
 alias ga='gitk --all &'
 alias telnet='echo "halt; stm32x unlock 0; reset halt; flash write_image erase main; reset\n" && telnet'
 alias tree="tree -C"
+alias py='python'
 
 ##################
 # zsh aliases    #
