@@ -4,7 +4,7 @@ syn on
 " Set command history length
 set history=10000
 
-" Highly recommended to set tab keys to 4 spaces
+" Set tab keys
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -63,6 +63,9 @@ au! BufRead,BufNewFile *.pde set filetype=java
 
 " Display ino files (arduino) like c files:
 au! BufRead,BufNewFile *.ino set filetype=c
+
+" Use 4 spaces as tabs in python files:
+au! BufRead,BufNewFile *.py set tabstop=4 shiftwidth=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell check http://vimcasts.org/episodes/spell-checking/
