@@ -4,3 +4,6 @@
 .*.swo
 .*.swn
 
+# Add this to avoid git tracking:
+*.git
+
