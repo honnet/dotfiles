@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # alias de drix
+alias vpnlab='ssh -C -D 1080 tdl.io'
 alias grep='grep --color'
 alias rgrep='rgrep --color -n -I --exclude=\*tags\*'
 alias ls='ls --color'

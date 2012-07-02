@@ -62,6 +62,8 @@ esac
 # Shell functions
 setenv() { typeset -x "${1}${1:+=}${(@)argv[2,$#]}" }  # csh compatibility
 freload() { while (( $# )); do; unfunction $1; autoload -U $1; shift; done }
+function cdl() { cd "$1"; ls -l }
+function getPWfor() { sudo sed -n "/$1/{n;p;}" ~/.ssh/pw.txt; }
 
 # Where to look for autoloaded function definitions
 fpath=($fpath ~/.zfunc)
