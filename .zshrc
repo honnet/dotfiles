@@ -210,3 +210,4 @@ export PATH=$PATH:/opt/android-sdk/tools
 export PATH=$PATH:/opt/arm/bin
 export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
+export PYTHONSTARTUP=~/.pystartup
