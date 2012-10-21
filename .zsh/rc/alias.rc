@@ -1,6 +1,9 @@
 #!/bin/sh
 
 # alias de drix
+alias wefunk="rhythmbox-client --play-uri=http://stream-90.shoutcast.com:80/wefunk_radio_mp3_64kbps &"
+alias inst="sudo apt-get install -y"
+alias uninst="sudo apt-get autoremove -y"
 alias vpnlab='ssh -C -D 1080 tdl.io'
 alias vpnweb='firefox whatIsMyIPaddress.com & vpnlab'
 alias grep='grep --color'
@@ -13,7 +16,7 @@ alias v='vi -O'
 alias m='meld'
 alias g='gvim -O'
 alias ga='gitk --all &'
-alias telnet='echo "halt; stm32x unlock 0; reset halt; flash write_image erase main; reset\n" && telnet'
+alias telnet_arm='echo "halt; stm32x unlock 0; reset halt; flash write_image erase main; reset\n" && telnet'
 alias tree="tree -C"
 alias py='python'
 
