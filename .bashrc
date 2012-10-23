@@ -93,3 +93,9 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+export PERL_LOCAL_LIB_ROOT="/home/vloud/perl5";
+export PERL_MB_OPT="--install_base /home/vloud/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/vloud/perl5";
+export PERL5LIB="/home/vloud/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/vloud/perl5/lib/perl5";
+export PATH="/home/vloud/perl5/bin:$PATH";

@@ -13,3 +13,7 @@ do
   ln -s dotfiles/$I .
 done
 
+sudo apt-get install -y zsh git vim-gnome terminator chromium-browser meld gitk arduino smplayer curl minicom gnome-shell
+
+sudo chsh -s /usr/bin/zsh
+
