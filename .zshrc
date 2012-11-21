@@ -211,3 +211,5 @@ export PATH=$PATH:/opt/arm/bin
 export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
 export PYTHONSTARTUP=~/.pystartup
+export SDK_DIR="/home/drix/geek/sifteo/SDK"
+export PATH=$SDK_DIR/bin:$PATH
