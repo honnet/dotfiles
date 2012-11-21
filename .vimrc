@@ -104,3 +104,12 @@ highlight SpellLocal term=underline,bold cterm=underline,bold
 " Automatically remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
 
+" tab navigation
+nnoremap <silent> <A-Left> :tabprevious<CR>
+nnoremap <silent> <A-Right> :tabnext<CR>
+
+" splited screen navigation
+"nmap <silent> <A-Up> :wincmd k<CR>
+"nmap <silent> <A-Down> :wincmd j<CR>
+"nmap <silent> <A-Left> :wincmd h<CR>
+"nmap <silent> <A-Right> :wincmd l<CR>
