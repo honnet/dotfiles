@@ -1,0 +1,24 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  close_button_on_tab = False
+  borderless = True
+  window_state = maximise
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    custom_command = zsh
+    scrollback_lines = 999
+    foreground_color = "#ffffff"
+    use_custom_command = True
+    font = Monospace 10
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

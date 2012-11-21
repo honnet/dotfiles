@@ -1,6 +1,7 @@
 #!/bin/sh
 
-DOTFILES=".bashrc .gitconfig .gvimrc .vim .vimrc .zsh .zshrc .gitmyignore .pystartup"
+DOTFILES=".bashrc .gitconfig .gvimrc .vim .vimrc .zsh .zshrc
+          .gitmyignore .pystartup"
 
 cd
 
@@ -13,7 +14,11 @@ do
   ln -s dotfiles/$I .
 done
 
-sudo apt-get install -y zsh git vim-gnome terminator chromium-browser meld gitk arduino smplayer curl minicom gnome-shell
+# to be factorized when more .config files:
+mkdir -p ~/.config/terminator/
+ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
-sudo chsh -s /usr/bin/zsh
+# TODO: list useful application
+# sudo apt-get install git gvim-gnome terminator meld chromium-browser \
+#                      gimp smplayer audacity #...
 
