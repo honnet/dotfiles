@@ -17,7 +17,10 @@ set guifont=Monospace\ 9
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
-"set guioptions-=r  "remove right-hand scroll bar
+
+" remove scrollbars
+set guioptions+=LlRrb
+set guioptions-=LlRrb
 
 " Allow copy/paste to/from clipboard with "cc/vv"
 noremap cc "+y
