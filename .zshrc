@@ -207,9 +207,10 @@ fi
 export PATH=$PATH:/home/drix/bin
 export PATH=$PATH:/opt/android-sdk/platform-tools
 export PATH=$PATH:/opt/android-sdk/tools
+export PATH=$PATH:/opt/arm-cs-tools/bin
 export PATH=$PATH:/opt/arm/bin
 export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
 export PYTHONSTARTUP=~/.pystartup
-export SDK_DIR="/home/drix/geek/sifteo/SDK"
+export SDK_DIR="/home/drix/sifteo/thundercracker/sdk"
 export PATH=$SDK_DIR/bin:$PATH
