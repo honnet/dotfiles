@@ -64,6 +64,9 @@ au! BufRead,BufNewFile *.pde set filetype=java
 " Display ino files (arduino) like c files:
 au! BufRead,BufNewFile *.ino set filetype=c
 
+" Allow detecting markdown files:
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
+
 " Use 4 spaces as tabs in python files:
 au! BufRead,BufNewFile *.py set tabstop=4 shiftwidth=4
 
