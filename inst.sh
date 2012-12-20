@@ -19,6 +19,6 @@ mkdir -p ~/.config/terminator/
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
 # TODO: list useful application
-# sudo apt-get install git gvim-gnome terminator meld chromium-browser \
-#                      gimp smplayer audacity #...
+# inst zsh git gvim-gnome terminator meld chromium-browser \
+#      gimp smplayer audacity #...
 
