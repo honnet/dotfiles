@@ -145,7 +145,7 @@ zstyle ':completion:*' menu select=3
 zstyle ':completion:*:cd:*' tag-order local-directories # path-directories
 
 # and anyway, just look for users in the following list
-users=(honnet)
+users=(sifteo)
 zstyle ':completion:*' users $users
 
 # list of completers to use
@@ -204,13 +204,8 @@ if [ "$HOST" = "davis" -a "$TTY" = "/dev/tty1" ]; then
 fi
 
 
-export PATH=$PATH:/home/drix/bin
-export PATH=$PATH:/opt/android-sdk/platform-tools
-export PATH=$PATH:/opt/android-sdk/tools
 export PATH=$PATH:/opt/arm-cs-tools/bin
-export PATH=$PATH:/opt/arm/bin
-export PATH=$PATH:/opt/msp430-gcc/bin
-export PATH=$PATH:/opt/modelsim/linux/
 export PYTHONSTARTUP=~/.pystartup
-export SDK_DIR="/home/drix/sifteo/thundercracker/sdk"
+export SDK_DIR="$HOME/sifteo/thundercracker/sdk"
 export PATH=$SDK_DIR/bin:$PATH
+

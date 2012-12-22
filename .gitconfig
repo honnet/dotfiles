@@ -1,6 +1,6 @@
 [user]
 	name = Cedric Honnet
-	email = honnet@telecom-paristech.org
+	email = cedric@sifteo.com
 
 [github]
 	user = honnet
@@ -23,7 +23,7 @@
 
 [color "status"]
 	added = green
-	changed = yellow 
+	changed = yellow
 	untracked = red
 
 [core]
