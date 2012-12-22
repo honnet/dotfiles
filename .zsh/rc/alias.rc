@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # alias de drix
-alias wefunk="rhythmbox-client --play-uri=http://stream-90.shoutcast.com:80/wefunk_radio_mp3_64kbps &"
+alias wefunk="mplayer http://stream-90.shoutcast.com:80/wefunk_radio_mp3_64kbps"
 alias inst="sudo apt-get install -y"
 alias uninst="sudo apt-get autoremove -y"
 alias vpnlab='ssh -C -D 1080 tdl.io'
