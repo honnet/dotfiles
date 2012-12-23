@@ -64,6 +64,9 @@ au! BufRead,BufNewFile *.pde set filetype=java
 " Display ino files (arduino) like c files:
 au! BufRead,BufNewFile *.ino set filetype=c
 
+" Display all makefiles with appropriate syntax:
+au! BufRead,BufNewFile *akefile* set filetype=make
+
 " Allow detecting markdown files:
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=mkd
 
