@@ -18,8 +18,10 @@ done
 mkdir -p ~/.config/terminator/
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
-# TODO: list useful application
-inst zsh git gvim-gnome terminator meld chromium-browser mplayer
+# list useful application
+inst zsh gvim-gnome terminator meld chromium-browser mplayer gitk \
+     uuid-dev libusb-1.0-0-dev mesa-common-dev libglu1-mesa-dev libasound2-dev \
+     g++ upx-ucl ia32-libs python-imaging
 
 chsh -s $(which zsh)
 
