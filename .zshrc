@@ -206,6 +206,6 @@ fi
 
 export PATH=$PATH:/opt/arm-cs-tools/bin
 export PYTHONSTARTUP=~/.pystartup
-export SDK_DIR="$HOME/sifteo/thundercracker/sdk"
+export SDK_DIR="$HOME/thundercracker/sdk"
 export PATH=$SDK_DIR/bin:$PATH
 
