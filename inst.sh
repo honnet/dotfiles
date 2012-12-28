@@ -18,9 +18,9 @@ done
 mkdir -p ~/.config/terminator/
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
-# TODO: improve list useful application
-inst zsh git gvim-gnome terminator meld chromium-browser \
-     gimp smplayer audacity #...
+# improve list useful application
+sudo apt-get install -y zsh gitk vim-gtk terminator meld chromium-browser \
+  gimp smplayer audacity ia32-libs g++ #...
 
 chsh -s $(which zsh)
 
