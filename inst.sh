@@ -21,7 +21,7 @@ ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 # list useful application
 sudo apt-get install -y zsh vim-gtk terminator meld chromium-browser mplayer gitk \
      uuid-dev libusb-1.0-0-dev mesa-common-dev libglu1-mesa-dev libasound2-dev \
-     g++ upx-ucl ia32-libs python-imaging
+     openocd doxygen g++ upx-ucl ia32-libs python-imaging
 
 chsh -s $(which zsh)
 
