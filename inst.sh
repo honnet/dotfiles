@@ -18,7 +18,8 @@ done
 mkdir -p ~/.config/terminator/
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
-# improve list useful application
+# A few useful applications:
+sudo apt-get update
 sudo apt-get install -y zsh gitk vim-gtk terminator meld chromium-browser \
   gimp smplayer audacity ia32-libs g++ #...
 
