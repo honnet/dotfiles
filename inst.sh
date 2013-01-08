@@ -18,7 +18,8 @@ done
 mkdir -p ~/.config/terminator/
 ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
-# list useful application
+# A few useful applications:
+sudo apt-get update
 sudo apt-get install -y zsh vim-gtk terminator meld chromium-browser mplayer gitk \
      uuid-dev libusb-1.0-0-dev mesa-common-dev libglu1-mesa-dev libasound2-dev \
      openocd doxygen g++ upx-ucl ia32-libs python-imaging
