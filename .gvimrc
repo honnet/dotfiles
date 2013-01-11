@@ -13,7 +13,7 @@ set novisualbell
 " Change colorscheme from default to delek
 colorscheme molokai
 
-set guifont=Monospace\ 9
+set guifont=Monospace\ 10
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar

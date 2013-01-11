@@ -209,3 +209,9 @@ export PYTHONSTARTUP=~/.pystartup
 export SDK_DIR="$HOME/thundercracker/sdk"
 export PATH=$SDK_DIR/bin:$PATH
 
+export ANDROIDSDK="$HOME/geek/android/android-sdk-linux"
+export ANDROIDNDK="$HOME/geek/android/android-ndk-r8c"
+export ANDROIDNDKVER=r8c
+export ANDROIDAPI=14
+export PATH=$ANDROIDNDK:$ANDROIDSDK/tools:$ANDROIDSDK/platform-tools:$PATH
+
