@@ -6,8 +6,8 @@ set history=10000
 
 " Set tab keys
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 
 " Indent automatically depending on filetype (use ":set noai" otherwise)
 filetype indent on
