@@ -51,6 +51,7 @@
 	rev = revert
 	rmc = rm --cached
 	st = status
+    gr = grep -n
 
 [merge]
   tool = meld
