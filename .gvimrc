@@ -10,9 +10,6 @@ autocmd GUIEnter * call FullScreen()
 " disable visual warnings (too slow)
 set novisualbell
 
-" Change colorscheme from default to delek
-colorscheme molokai
-
 set guifont=Monospace\ 10
 
 set guioptions-=m  "remove menu bar

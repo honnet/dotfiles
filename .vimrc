@@ -1,6 +1,12 @@
 " Set syntax on
 syn on
 
+" Change colorscheme from default to delek
+colorscheme molokai
+
+" allow more colors!
+set t_Co=256
+
 " Set command history length
 set history=10000
 
