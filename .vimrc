@@ -1,7 +1,7 @@
 " Set syntax on
 syn on
 
-" Change colorscheme from default to delek
+" Change colorscheme from default to molokai
 colorscheme molokai
 
 " allow more colors!
