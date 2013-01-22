@@ -10,7 +10,7 @@ autocmd GUIEnter * call FullScreen()
 " disable visual warnings (too slow)
 set novisualbell
 
-" Change colorscheme from default to delek
+" Change colorscheme from default to molokai
 colorscheme molokai
 
 set guifont=Monospace\ 9
