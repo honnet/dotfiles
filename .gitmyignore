@@ -1,6 +1,6 @@
 # temporary files #
 ###################
-.*.swp
+.*swp
 .*.swo
 .*.swn
 
