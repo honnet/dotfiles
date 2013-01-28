@@ -1,5 +1,7 @@
 " Open in full screen
 function FullScreen()
+  silent !wmctrl -r :ACTIVE: -b toggle,maximized_horz
+  silent !wmctrl -r :ACTIVE: -b toggle,maximized_vert
   silent !wmctrl -r :ACTIVE: -b toggle,fullscreen
 endfunction
 
