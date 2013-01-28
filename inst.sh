@@ -20,7 +20,7 @@ ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 
 # A few useful applications:
 sudo apt-get update
-sudo apt-get install -y zsh gitk vim-gtk terminator meld chromium-browser \
+sudo apt-get install -y zsh gitk vim-gtk wmctrl terminator meld chromium-browser \
   gimp smplayer audacity ia32-libs g++ #...
 
 chsh -s $(which zsh)
