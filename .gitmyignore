@@ -7,3 +7,5 @@
 # Add this to avoid git tracking:
 *.git
 
+# exuberant-ctags:
+tags
