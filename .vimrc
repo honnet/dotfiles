@@ -46,7 +46,8 @@ au FileType * setl fo=cql
 set mouse=a
 
 " Activate variable/function declaration research
-set tags=./tags;
+set tags=./tags,./../tags,./../../tags,./../../../tags,tags,~/*/tags;
+
 
 " Do world statistics on file
 function! WordFrequency() range
