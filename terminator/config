@@ -11,7 +11,7 @@
     scrollback_lines = 999
     foreground_color = "#ffffff"
     use_custom_command = True
-    font = Monospace 10
+    font = Monospace 9.5
     scrollback_infinite = True
 [layouts]
   [[default]]
