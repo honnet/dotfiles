@@ -2,3 +2,5 @@ Install script is inst.sh
 
 (don't forget all the files are hidden)
 
+# To use ctags in a git repo, execute the following in the repo root:
+./post-commit.sh

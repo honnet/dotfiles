@@ -21,9 +21,14 @@ ln -s ~/dotfiles/terminator/config ~/.config/terminator/
 # A few useful applications:
 sudo apt-get update
 sudo apt-get install -y zsh gitk vim-gtk wmctrl terminator meld chromium-browser \
-     gimp smplayer audacity ia32-libs g++ exuberant-ctags
-     uuid-dev libusb-1.0-0-dev mesa-common-dev libglu1-mesa-dev libasound2-dev \
-     openocd doxygen g++ upx-ucl ia32-libs python-imaging
+  gimp smplayer audacity ia32-libs g++ exuberant-ctags #...
 
 chsh -s $(which zsh)
+
+
+exit
+
+# To install git hooks: TODO: loop on all useful repo
+cd ~/thundercracker
+ln -s ~/dotfiles/post-commit .git/hooks
 

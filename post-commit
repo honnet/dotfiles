@@ -1,0 +1,5 @@
+# should go in .git/hooks
+
+echo "$(date) => Updating tags: $(pwd)..." > /tmp/tags_log
+
+git ls-files | xargs /usr/bin/ctags -a 2> /dev/null &
