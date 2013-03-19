@@ -126,3 +126,8 @@ nnoremap <silent> <A-Right> :tabnext<CR>
 "nmap <silent> <A-Down> :wincmd j<CR>
 "nmap <silent> <A-Left> :wincmd h<CR>
 "nmap <silent> <A-Right> :wincmd l<CR>
+
+" display diff in vim: github.com/airblade/vim-gitgutter
+" on/off    :GitGutterToggle
+" highlight :GitGutterLineHighlightsToggle
+execute pathogen#infect()

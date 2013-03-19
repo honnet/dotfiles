@@ -26,9 +26,21 @@ sudo apt-get install -y zsh gitk vim-gtk wmctrl terminator meld chromium-browser
 chsh -s $(which zsh)
 
 
-exit
+# install vim-pathogen:
+mkdir -p ~/.vim/autoload ~/.vim/bundle; \
+    curl -Sso ~/.vim/autoload/pathogen.vim \
+    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+
+# install Vim Git Gutter:
+cd ~/.vim/bundle
+git clone git://github.com/airblade/vim-gitgutter.git
+
+
+
+exit ##############################################################################
 
 # To install git hooks: TODO: loop on all useful repo
 cd ~/thundercracker
 ln -s ~/dotfiles/post-commit .git/hooks
+
 
