@@ -131,3 +131,7 @@ nnoremap <silent> <A-Right> :tabnext<CR>
 " on/off    :GitGutterToggle
 " highlight :GitGutterLineHighlightsToggle
 execute pathogen#infect()
+
+" simplify file search
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+

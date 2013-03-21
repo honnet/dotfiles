@@ -35,7 +35,9 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle; \
 cd ~/.vim/bundle
 git clone git://github.com/airblade/vim-gitgutter.git
 
-
+# install Vim ctrlP for fuzzy file finder
+cd ~/.vim
+git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
 
 exit ##############################################################################
 
