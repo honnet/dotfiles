@@ -3,3 +3,6 @@
 .vim/.netrwhist
 .ssh/id_rsa
 .vim/spell/
+.vim/autoload/
+.vim/bundle/
+
