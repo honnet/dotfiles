@@ -203,6 +203,8 @@ if [ "$HOST" = "davis" -a "$TTY" = "/dev/tty1" ]; then
   startx
 fi
 
+# Allow magic zsh's mv AKA zmv:
+autoload zmv
 
 export PATH=$PATH:/opt/arm-cs-tools/bin
 export PYTHONSTARTUP=~/.pystartup
