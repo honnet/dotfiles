@@ -213,6 +213,8 @@ export PATH=$PATH:/opt/arm-cs-tools/bin
 export PATH=$PATH:/opt/arm/bin
 export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
+export PATH=$PATH:/opt/eagle/bin
 export PYTHONSTARTUP=~/.pystartup
 export SDK_DIR="/home/drix/sifteo/thundercracker/sdk"
 export PATH=$SDK_DIR/bin:$PATH
+
