@@ -25,3 +25,7 @@ sudo apt-get install -y zsh gitk vim-gtk wmctrl terminator meld chromium-browser
 
 chsh -s $(which zsh)
 
+
+# TODO: link to history files in ~/Documents/hist_files !!!
+echo "TODO: link to history files in ~/Documents/hist_files !!!"
+
