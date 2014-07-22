@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DOTFILES=".bashrc .gitconfig .gvimrc .vim .vimrc .zsh .zshrc
-          .gitmyignore .pystartup"
+          .gitmyignore .pystartup .gdbinit"
 
 cd
 
