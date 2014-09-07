@@ -214,6 +214,6 @@ export PATH=$PATH:/opt/msp430-gcc/bin
 export PATH=$PATH:/opt/modelsim/linux/
 export PATH=$PATH:/opt/eagle/bin
 export PYTHONSTARTUP=~/.pystartup
-export SDK_DIR="/home/drix/geek/sifteo/thundercracker/sdk/"
+export SDK_DIR="/home/drix/geek/sifteo/sdk/"
 export PATH=$SDK_DIR/bin:$PATH
 
