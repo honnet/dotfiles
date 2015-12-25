@@ -21,7 +21,7 @@ set autoindent
 set pastetoggle=<F2>
 
 " display line numbers
-:set number
+set number
 
 " turn off expandtab in makefiles
 autocmd FileType make setlocal noexpandtab
