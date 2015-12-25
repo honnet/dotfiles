@@ -7,7 +7,7 @@ alias uninst="sudo apt-get autoremove -y"
 alias vpnlab='ssh -C -D 1080 tdl.io'
 alias vpnweb='firefox whatIsMyIPaddress.com & vpnlab'
 alias grep='grep --color'
-alias rgrep='rgrep --color -n -I --exclude=\*tags\*'
+alias rgrep='rgrep --color -n -I'
 alias gg='git grep -n'
 alias ls='ls --color'
 alias l='ls -l'
