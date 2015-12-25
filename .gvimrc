@@ -9,8 +9,9 @@ endfunction
 autocmd GUIEnter * call FullScreen()
 
 
-" disable visual warnings (too slow)
+" disable all warnings
 set novisualbell
+set vb t_vb =
 
 " Change colorscheme from default to molokai
 colorscheme molokai
